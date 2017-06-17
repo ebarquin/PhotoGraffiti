@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Current Location View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CurrentLocationViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,7 +33,7 @@
                                 </constraints>
                                 <state key="normal" image="btn_localizar_on"/>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="rrq-4E-Sbt">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="rrq-4E-Sbt">
                                 <rect key="frame" x="177" y="569" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="1013.6" y="776.76161919040487"/>
         </scene>
-        <!--View Controller-->
+        <!--Graffiti Details View Controller-->
         <scene sceneID="mhb-Ws-lrz">
             <objects>
-                <viewController id="C3a-BX-WB1" sceneMemberID="viewController">
+                <viewController id="C3a-BX-WB1" customClass="GraffitiDetailsViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="70q-8c-3oL"/>
                         <viewControllerLayoutGuide type="bottom" id="FNf-h6-lDQ"/>
@@ -148,7 +148,21 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7QH-RL-5D4" secondAttribute="trailing" id="yhh-7t-6G7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7w8-ox-KII"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="fEn-Ri-mDy"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="7w8-ox-KII">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YvW-PV-7np">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cancelPressed:" destination="C3a-BX-WB1" id="aex-N5-rFF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="E3q-R8-Nne">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoD-yx-gO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
