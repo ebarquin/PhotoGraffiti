@@ -37,6 +37,8 @@ class CurrentLocationViewController: UIViewController {
         }
     }
     
+    var selectedCallaoutImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +48,10 @@ class CurrentLocationViewController: UIViewController {
         self.navigationItem.titleView = UIImageView(image: image)
         
         updatingLocation = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        mapView.delegate = self
+        mapView.addAnnotations(GraffitiManager.shared4Instance.graffitis)
     }
 
     @IBAction func getLocation(_ sender: Any) {
@@ -117,6 +123,12 @@ class CurrentLocationViewController: UIViewController {
             detailsViewController.taggedGraffiti = self.graffiti
             detailsViewController.delegate = self
         }
+        if segue.identifier == "showPinImage" {
+            let navigationController = segue.destination as! UINavigationController
+            let graffitiImageViewController = navigationController.topViewController as! GraffitiImageViewController
+            graffitiImageViewController.selectedCallout = selectedCallaoutImage
+            
+        }
         
     }
 
@@ -155,5 +167,54 @@ extension CurrentLocationViewController: CLLocationManagerDelegate {
         }
     }
     
+}
+
+extension CurrentLocationViewController: MKMapViewDelegate{
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "graffitiPin")
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "graffitiPin")
+        } else {
+            annotationView?.annotation = annotation
+        }
+        if let place = annotation as? Graffiti {
+            let imageName = place.graffitiImageName
+            if let imagesURL = GraffitiManager.shared4Instance.imagesURL() {
+                let imageData = try! Data(contentsOf: imagesURL.appendingPathComponent(imageName))
+                selectedCallaoutImage = UIImage(data:imageData)
+                let image = resizeImage(image: selectedCallaoutImage!, newWidth: 40.0)
+                let btnImageView = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+                btnImageView.setImage(image, for: .normal)
+                annotationView?.leftCalloutAccessoryView = btnImageView
+                annotationView?.image = UIImage(named: "img_pin")
+                annotationView?.canShowCallout = true
+            }
+            
+            
+        }
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.leftCalloutAccessoryView {
+            performSegue(withIdentifier: "showPinImage", sender: view)
+        }
+    }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
 }
 

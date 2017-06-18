@@ -68,6 +68,7 @@ class GraffitiDetailsViewController: UIViewController {
                 delegate?.graffitiDidFinishGetTagged(sender: self, taggedGraffiti: taggedGraffiti)
             }
         }
+        dismiss(animated: true, completion: nil)
     }
 }
 
