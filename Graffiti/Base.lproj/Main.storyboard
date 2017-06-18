@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="laA-X6-NEE">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laA-X6-NEE">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBy-Ag-VZb">
@@ -32,6 +32,9 @@
                                     <constraint firstAttribute="width" constant="75" id="ZD6-DJ-E98"/>
                                 </constraints>
                                 <state key="normal" image="btn_localizar_on"/>
+                                <connections>
+                                    <action selector="getLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ylv-pW-BNw"/>
+                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="rrq-4E-Sbt">
                                 <rect key="frame" x="177" y="569" width="20" height="20"/>
@@ -57,6 +60,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="rrq-4E-Sbt" id="DHp-yS-tuX"/>
+                        <outlet property="getButton" destination="PBy-Ag-VZb" id="HFn-mE-emo"/>
+                        <outlet property="mapView" destination="laA-X6-NEE" id="mF1-hn-pOM"/>
+                        <outlet property="tagButton" destination="Kww-23-jMw" id="hfF-bH-KTF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
