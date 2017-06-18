@@ -83,7 +83,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-9d-cKQ">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-9d-cKQ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="I1E-cQ-Kh4"/>
@@ -157,9 +157,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7QH-RL-5D4" secondAttribute="trailing" id="yhh-7t-6G7"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="fEn-Ri-mDy"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="7w8-ox-KII">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YvW-PV-7np">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,11 +165,18 @@
                                 <action selector="cancelPressed:" destination="C3a-BX-WB1" id="aex-N5-rFF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="E3q-R8-Nne">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="E3q-R8-Nne">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="7QH-RL-5D4" id="TPq-hT-TaG"/>
+                        <outlet property="imgGraffiti" destination="xIa-9d-cKQ" id="ayF-0H-UdD"/>
+                        <outlet property="latitudeLabel" destination="K2k-5z-q9w" id="IIt-vS-v5X"/>
+                        <outlet property="longitudeLabel" destination="7vY-Jb-Zoi" id="z44-92-1WI"/>
+                        <outlet property="saveButton" destination="E3q-R8-Nne" id="6Ug-nh-0eU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoD-yx-gO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

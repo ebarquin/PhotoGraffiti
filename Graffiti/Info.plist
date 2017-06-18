@@ -38,5 +38,9 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Graffiti utiliza tu localización para guardar graffitis que te vayas encontrando.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Graffiti necesita acceder a la camara para poder sacar fotos de los graffitis que vayas encontrando </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Graffiti necesita acceder a la librería para seleccionar las fotos de los graffitis </string>
 </dict>
 </plist>
