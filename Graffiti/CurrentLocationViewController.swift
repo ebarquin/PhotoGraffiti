@@ -40,6 +40,8 @@ class CurrentLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GraffitiManager.shared4Instance.load()
+        
         let image = UIImage(named: "img_navbar_title")
         self.navigationItem.titleView = UIImageView(image: image)
         
@@ -121,6 +123,8 @@ class CurrentLocationViewController: UIViewController {
 }
 extension CurrentLocationViewController: GraffitiDetailsViewControllerDelegate {
     func graffitiDidFinishGetTagged(sender: GraffitiDetailsViewController, taggedGraffiti: Graffiti) {
+        GraffitiManager.shared4Instance.graffitis.append(taggedGraffiti)
+        GraffitiManager.shared4Instance.save()
         
     }
 }

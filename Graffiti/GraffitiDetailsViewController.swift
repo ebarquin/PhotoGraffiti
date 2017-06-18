@@ -49,6 +49,26 @@ class GraffitiDetailsViewController: UIViewController {
         longitudeLabel.text = String(format:"%.8f", (taggedGraffiti?.coordinate.longitude)!)
         addressLabel.text = taggedGraffiti?.graffitiAddress
     }
+    
+    @IBAction func saveGraffiti(_ sender: Any) {
+        if let image = imgGraffiti.image {
+            let ramdomName = UUID().uuidString.appending(".png")
+            if let url = GraffitiManager.shared4Instance.imagesURL()?.appendingPathComponent(ramdomName),
+                let imageData = UIImagePNGRepresentation(image) {
+                do {
+                    try imageData.write(to: url)
+                } catch (let error) {
+                    print("Error saving image: \(error)")
+                }
+            }
+            
+            taggedGraffiti = Graffiti(address: addressLabel.text!, latitude: Double(latitudeLabel.text!)!, longitude: Double(longitudeLabel.text!)!, image: ramdomName)
+            
+            if let taggedGraffiti = taggedGraffiti {
+                delegate?.graffitiDidFinishGetTagged(sender: self, taggedGraffiti: taggedGraffiti)
+            }
+        }
+    }
 }
 
 extension GraffitiDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
