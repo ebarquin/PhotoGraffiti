@@ -13,7 +13,7 @@
         <!--Current Location View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CurrentLocationViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CurrentLocationViewController" customModule="PhotoGraffiti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -53,7 +53,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ygi-yW-gq7">
-                        <barButtonItem key="rightBarButtonItem" title="Añadir" id="Kww-23-jMw">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="Kww-23-jMw">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="HiJ-aC-afL" kind="presentation" identifier="TagGraffiti" id="ee3-LT-klA"/>
@@ -75,7 +75,7 @@
         <!--Graffiti Details View Controller-->
         <scene sceneID="mhb-Ws-lrz">
             <objects>
-                <viewController id="C3a-BX-WB1" customClass="GraffitiDetailsViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C3a-BX-WB1" customClass="GraffitiDetailsViewController" customModule="PhotoGraffiti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="70q-8c-3oL"/>
                         <viewControllerLayoutGuide type="bottom" id="FNf-h6-lDQ"/>
@@ -85,50 +85,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="xIa-9d-cKQ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="339"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="I1E-cQ-Kh4"/>
                                     <constraint firstAttribute="width" constant="375" id="fiQ-lh-5Ec"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETALLES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx6-xt-nPB">
-                                <rect key="frame" x="20" y="459" width="120" height="29"/>
+                                <rect key="frame" x="20" y="423" width="120" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LONGITUD:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1F-b3-HIY">
-                                <rect key="frame" x="20" y="508" width="97" height="21"/>
+                                <rect key="frame" x="20" y="472" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LATITUD:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUs-hf-LlE">
-                                <rect key="frame" x="20" y="532" width="81" height="21"/>
+                                <rect key="frame" x="20" y="496" width="81" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIRECCIÓN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-Xf-4eo">
-                                <rect key="frame" x="20" y="563" width="97" height="21"/>
+                                <rect key="frame" x="20" y="527" width="97" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;longitud&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vY-Jb-Zoi">
-                                <rect key="frame" x="132" y="508" width="233" height="21"/>
+                                <rect key="frame" x="132" y="472" width="233" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="&lt;latitud&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2k-5z-q9w">
-                                <rect key="frame" x="132" y="532" width="233" height="21"/>
+                                <rect key="frame" x="132" y="496" width="233" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;direccion&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QH-RL-5D4">
-                                <rect key="frame" x="20" y="588" width="339" height="21"/>
+                                <rect key="frame" x="20" y="552" width="339" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <color key="textColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -151,6 +150,7 @@
                             <constraint firstItem="P1F-b3-HIY" firstAttribute="top" secondItem="Sx6-xt-nPB" secondAttribute="bottom" constant="20" id="iOw-12-EX8"/>
                             <constraint firstItem="Sx6-xt-nPB" firstAttribute="top" secondItem="xIa-9d-cKQ" secondAttribute="bottom" constant="20" id="jV3-Lg-6oh"/>
                             <constraint firstItem="7vY-Jb-Zoi" firstAttribute="leading" secondItem="P1F-b3-HIY" secondAttribute="trailing" constant="15" id="kay-4J-Gxf"/>
+                            <constraint firstItem="FNf-h6-lDQ" firstAttribute="top" secondItem="xIa-9d-cKQ" secondAttribute="bottom" constant="220" id="ljq-OC-QKg"/>
                             <constraint firstAttribute="trailing" secondItem="xIa-9d-cKQ" secondAttribute="trailing" id="nTD-Oo-CqY"/>
                             <constraint firstItem="7vY-Jb-Zoi" firstAttribute="top" secondItem="P1F-b3-HIY" secondAttribute="top" id="phl-uC-qZM"/>
                             <constraint firstItem="Sx6-xt-nPB" firstAttribute="leading" secondItem="gKq-CI-B4x" secondAttribute="leadingMargin" constant="4" id="xOT-kW-8nQ"/>
@@ -174,6 +174,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="addressLabel" destination="7QH-RL-5D4" id="TPq-hT-TaG"/>
                         <outlet property="imgGraffiti" destination="xIa-9d-cKQ" id="ayF-0H-UdD"/>
@@ -189,7 +191,7 @@
         <!--Graffiti Image View Controller-->
         <scene sceneID="tgG-u7-dFl">
             <objects>
-                <viewController id="c6j-Cz-uJF" customClass="GraffitiImageViewController" customModule="Graffiti" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c6j-Cz-uJF" customClass="GraffitiImageViewController" customModule="PhotoGraffiti" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KW9-ss-POq"/>
                         <viewControllerLayoutGuide type="bottom" id="Jvm-8t-m3j"/>
@@ -269,7 +271,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n7R-9S-9x3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="F5U-IU-TO6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F5U-IU-TO6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>PhotoGraffiti</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -20,6 +22,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Graffiti necesita acceder a la camara para poder sacar fotos de los graffitis que vayas encontrando </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Graffiti utiliza tu localización para guardar graffitis que te vayas encontrando.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Graffiti necesita acceder a la librería para seleccionar las fotos de los graffitis </string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -33,14 +41,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Graffiti utiliza tu localización para guardar graffitis que te vayas encontrando.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Graffiti necesita acceder a la camara para poder sacar fotos de los graffitis que vayas encontrando </string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Graffiti necesita acceder a la librería para seleccionar las fotos de los graffitis </string>
 </dict>
 </plist>
